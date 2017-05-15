@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::post('/', 'DashboardController@storeParticipant')->name('register.participant');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
