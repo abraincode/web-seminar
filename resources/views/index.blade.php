@@ -275,11 +275,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Registration &amp; Pricing</h3>
+                    <h3 class="section-title">Registration &amp; Form</h3>
                 </div>
             </div>
 
-            <form action="#" id="registration-form">
+            <form action="{{ route('register.participant') }}" id="registration-form" method="POST">
+              {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-12" id="registration-msg" style="display:none;">
                         <div class="alert"></div>
@@ -312,21 +313,15 @@
                         </div>
 
                         <div class="form-group">
-                            <select class="form-control" name="city" id="city" required>
-                                <option readonly>City</option>
-                                <option>City Name 1</option>
-                                <option>City Name 2</option>
-                                <option>City Name 3</option>
-                                <option>City Name 4</option>
-                            </select>
+                            <input type="text" class="form-control" placeholder="City" id="city" name="city" required>
                         </div>
 
                         <div class="form-group">
-                            <select class="form-control" name="program" id="program" required>
-                                <option readonly>Select Your Program</option>
-                                <option>Program Name 1</option>
-                                <option>Program Name 2</option>
-                                <option>Program Name 3</option>
+                            <select class="form-control" name="session" id="session" required>
+                                <option readonly>Select Your Session</option>
+                                <option value="session1">session Name 1</option>
+                                <option value="session2">session Name 2</option>
+                                <option value="session3">session Name 3</option>
                             </select>
                         </div>
                     </div>
