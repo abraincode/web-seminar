@@ -34,6 +34,16 @@ class DashboardController extends Controller
         //
     }
 
+    public function totalSeats()
+    {
+        //
+    }
+
+    public function availableSeats()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -44,10 +54,10 @@ class DashboardController extends Controller
     {
         // validasi data
         $this->validate($request, array(
-                'fname'      => 'required',
-                'lname'      => 'required|max:255',
+                'fullname'      => 'required',
                 'email'      => 'required',
                 'cell'       => 'required|numeric',
+                'job'      => 'required|max:255',
                 'address'    => 'required',
                 'zip'        => 'required|numeric',
                 'city'       => 'required',
@@ -56,10 +66,10 @@ class DashboardController extends Controller
 
         $participant = new Participant;
         $participant->id_participant = $this->getParticipantId();
-        $participant->first_name = $request->fname;
-        $participant->last_name = $request->lname;
+        $participant->fullname = $request->fullname;
         $participant->email = $request->email;
         $participant->phone = $request->cell;
+        $participant->job = $request->job;
         $participant->address = $request->address;
         $participant->zip_code = $request->zip;
         $participant->city = $request->city;

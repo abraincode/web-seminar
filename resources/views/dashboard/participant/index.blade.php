@@ -54,6 +54,7 @@
                   <th>Full Name</th>
                   <th>Email</th>
                   <th>Phone</th>
+                  <th>Job</th>
                   <th>Address</th>
                   <th>ZIP Code</th>
                   <th>City</th>
@@ -63,9 +64,10 @@
                 <tr>
                   <td>{{ $participant->id }}</td>
                   <td>{{ $participant->id_participant }}</td>
-                  <td>{{ $participant->first_name }}</td>
+                  <td>{{ $participant->fullname }}</td>
                   <td>{{ $participant->email }}</td>
                   <td>{{ $participant->phone }}</td>
+                  <td>{{ $participant->job }}</td>
                   <td>{{ $participant->address }}</td>
                   <td>{{ $participant->zip_code }}</td>
                   <td>{{ $participant->city }}</td>

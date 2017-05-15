@@ -16,10 +16,10 @@ class CreateParticipantsTable extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->increments('id');
             $table->string('id_participant')->unique();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('fullname');
             $table->string('email')->unique();
             $table->string('phone');
+            $table->string('job');
             $table->string('address');
             $table->string('zip_code');
             $table->string('city');
