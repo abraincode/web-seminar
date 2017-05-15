@@ -13,9 +13,9 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home.index');
 
-Route::post('/', 'DashboardController@storeParticipant')->name('register.participant');
+Route::post('/register/participant', 'DashboardController@storeParticipant')->name('register.participant');
 
 Auth::routes();
 
