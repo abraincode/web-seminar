@@ -56,6 +56,11 @@
 
     <header id="site-header" class="site-header valign-center">
         <div class="intro">
+            @if (session('status'))
+                  <div class="alert alert-success">
+                      {{ session('status') }}
+                  </div>
+            @endif
 
             <h2>25 April, 2015 / Townhall California</h2>
 
@@ -589,6 +594,6 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main1.js"></script>
 </body>
 </html>
