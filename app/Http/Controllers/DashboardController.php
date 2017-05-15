@@ -14,12 +14,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $participants = Participant::all();
+        return view('dashboard.index')->withParticipants($participants);
     }
 
     public function indexParticipant()
     {
-        return view('dashboard.participant.index');
+        $participants = Participant::all();
+        return view('dashboard.participant.index')->withParticipants($participants);
     }
 
     /**
