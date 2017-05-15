@@ -26,17 +26,8 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="active treeview">
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li class="{{ Request::is('/dashboard/participant') ? "active" : "/dashboard/participant" }}"><a href="/dashboard/participant"><i class="fa fa-users"></i> Participant</a></li>
-        </ul>
-      </li>
+      <li class="{{ Route::currentRouteNamed('dashboard.home.index') ? 'active' : '' }}"><a href="/dashboard/home"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li class="{{ Route::currentRouteNamed('dashboard.participant.index') ? 'active' : '' }}"><a href="/dashboard/participant"><i class="fa fa-users"></i> Participant</a></li>
     </ul>
   </section>
   <!-- /.sidebar -->
