@@ -53,6 +53,7 @@ class DashboardController extends Controller
             ));
 
         $participant = new Participant;
+        $participant->id_participant = $this->getParticipantId();
         $participant->first_name = $request->fname;
         $participant->last_name = $request->lname;
         $participant->email = $request->email;
@@ -66,8 +67,28 @@ class DashboardController extends Controller
         // flash messages
         $request->session()->flash('status', 'Registration Success!');
         // redirect ke halaman
-        return redirect()->route('dashboard.home.index');
+        return redirect()->route('home.index');
     }
+
+    public function getParticipantId(){
+       do {
+           $rand = $this->generateRandomString(6);
+        } while(!empty(Participant::where('id_participant',$rand)->first()));
+          return $rand;
+    }
+
+
+
+    public function generateRandomString($length) {
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+     }
+
 
     /**
      * Display the specified resource.
