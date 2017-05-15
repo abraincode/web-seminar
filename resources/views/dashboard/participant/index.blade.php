@@ -59,17 +59,19 @@
                   <th>City</th>
                   <th>Session</th>
                 </tr>
+                 @foreach ($participants as $participant)
                 <tr>
-                  <td>1</td>
-                  <td>0110115006</td>
-                  <td>Dhimas Akbar</td>
-                  <td>dhimasanb@gmail.com</td>
-                  <td>08111772929</td>
-                  <td>Jl. Bungur No. 33 Kel. Bangka Kec. Mampang Prapatan</td>
-                  <td>12730</td>
-                  <td>Jakarta Selatan</td>
-                  <td>Web Fundamental</td>
+                  <td>{{ $participant->id }}</td>
+                  <td>{{ $participant->id_participant }}</td>
+                  <td>{{ $participant->first_name }}</td>
+                  <td>{{ $participant->email }}</td>
+                  <td>{{ $participant->phone }}</td>
+                  <td>{{ $participant->address }}</td>
+                  <td>{{ $participant->zip_code }}</td>
+                  <td>{{ $participant->city }}</td>
+                  <td>{{ $participant->session }}</td>
                 </tr>
+              @endforeach
               </tbody></table>
             </div>
             <!-- /.box-body -->
